@@ -1,0 +1,6 @@
+name: Git Checkout
+description: Overrides the git checkout behaviour for a job.
+author: https://github.com/praveensastry
+requirements: []
+configuration:
+  properties: []
