@@ -2,19 +2,19 @@
 
 set -euo pipefail
 
-echo '--- Cleaning existing git repo'
+echo '--- cleaning existing git repo'
 rm -rf "${BUILDKITE_BUILD_CHECKOUT_PATH}"
 
-echo '--- Initializing a git repo'
+echo '--- initializing a git repo'
 git init ${BUILDKITE_BUILD_CHECKOUT_PATH}
 
-echo '--- Setting remote to the Target git repo for this job'
+echo '--- setting remote to the Target git repo for this job'
 cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
 git remote add origin ${GIT_REPO_URL}
 
-echo '--- Fetching head'
+echo '--- fetching head'
 git fetch
 
-echo '--- Checking out given ref spec'
+echo '--- checking out given ref spec'
 git reset --hard ${GIT_REF_SPEC}
 
